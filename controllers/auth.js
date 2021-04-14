@@ -14,9 +14,10 @@ exports.signup = (req, res) => {
             name: user.name,
             email: user.email,
             id: user._id
-        });
+        });     
     });
 };
+
 
 exports.signout = (req, res) => {
     res.json({
