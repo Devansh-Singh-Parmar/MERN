@@ -14,7 +14,7 @@ router.post("/signup",[
 
 router.post("/signin",[
     check("email", "email is required").isEmail(),
-    check("password", "password field is required").isLength({ min:  }),
+    check("password", "password field is required").isLength({ min: 3}),
 ],
  signin
 );
