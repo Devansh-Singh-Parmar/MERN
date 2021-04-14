@@ -28,7 +28,7 @@ var userSchema = new mongoose.Schema({
   //TODO: come back here
   encry_password: {
       type: String,
-      required: true
+      required: false
   },
   salt: String,
   role: {
@@ -47,6 +47,7 @@ userSchema.virtual("password")
     .set(function(password){
         this._password = password
         this.salt = uuidv1();
+        console.log(this._password,this.salt)
         this.encry_password = this.securePassword(password);
     })
     .get(function(){
